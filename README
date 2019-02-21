@@ -1,1 +1,1 @@
-This is an anagram solver using HashMap.
+This is an anagram solver using word vectors and HashMaps with character counts of words.
