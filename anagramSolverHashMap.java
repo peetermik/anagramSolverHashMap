@@ -25,12 +25,13 @@ public class anagramSolverHashMap {
             for (String line: lines) {
                 if (line.length() == word.length() && !line.equals(word)) {
 
-                    // We'll do word vector comparisons first, as this results in ~20% decrease of total time spent compared to using only HashMaps.
+                    // We'll do word vector comparisons first, as this results (on average) in ~20% decrease
+                    // of total time spent compared to using only HashMaps.
                     // As vector comparison produces some collisions, then those are checked again with the HashMap character counts.
                     // If two HashMaps are equal, then we have an anagram.
 
                     if (wordVector(line) == originalWordVector) {
-                        HashMap < Character, Integer > currentHash = wordHashMap(line.toLowerCase());
+                        HashMap < Character, Integer > currentHash = wordHashMap(line);
                         if (currentHash.equals(wordHash)) {
                             output += "," + line;
                         }
